@@ -16,5 +16,10 @@
 }
 
 - (IBAction)startButton:(id)sender {
+	
+	double mPCD = self.pointPCD.doubleValue;
+	int mNumber = self.pointNumber.intValue;
+	double mAngle = self.pointAngle.doubleValue;	
+	
 }
 @end
