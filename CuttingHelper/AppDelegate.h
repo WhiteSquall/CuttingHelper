@@ -11,5 +11,8 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTextField *pointPCD;
+@property (weak) IBOutlet NSTextField *pointNumber;
+@property (weak) IBOutlet NSTextField *pointAngle;
 
 @end
