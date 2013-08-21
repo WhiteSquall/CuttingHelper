@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CuttingHelper' target in the 'CuttingHelper' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
