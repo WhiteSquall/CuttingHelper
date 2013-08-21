@@ -14,5 +14,7 @@
 @property (weak) IBOutlet NSTextField *pointPCD;
 @property (weak) IBOutlet NSTextField *pointNumber;
 @property (weak) IBOutlet NSTextField *pointAngle;
+- (IBAction)startButton:(id)sender;
+@property (weak) IBOutlet NSScrollView *pointView;
 
 @end
