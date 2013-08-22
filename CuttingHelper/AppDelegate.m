@@ -7,19 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#import "CallHelper.h"
 
 @implementation AppDelegate
 
+@synthesize pointPCD = _pointPCD;
+@synthesize pointNumber = _pointNumber;
+@synthesize pointAngle = _pointAngle;
+@synthesize pointLabel = _pointLabel;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
+	
+	CallHelper *aCallhelper = [[CallHelper alloc] init];
+	[self setCallhelper:aCallhelper];
+
 }
 
 - (IBAction)startButton:(id)sender {
 	
-	double mPCD = self.pointPCD.doubleValue;
-	int mNumber = self.pointNumber.intValue;
-	double mAngle = self.pointAngle.doubleValue;	
+	double aPCD = [self.pointPCD doubleValue];
+	int aNumber = [self.pointNumber intValue];
+	double aAngle = [self.pointAngle doubleValue];
 	
+	double bX = aPCD * aNumber * aAngle;
+	
+	NSString *aText = [NSString stringWithFormat:@"PCD : %f\nNumber of Point : %dea\nAngle of Point to Point : %0.3f\n", aPCD, aNumber, aAngle];
+	
+	[self.pointLabel setStringValue:aText];
 }
 @end
