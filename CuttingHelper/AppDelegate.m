@@ -26,13 +26,15 @@
 
 - (IBAction)startButton:(id)sender {
 	
+	NSString *aText;
+	
 	double aPCD = [self.pointPCD doubleValue];
 	int aNumber = [self.pointNumber intValue];
 	double aAngle = [self.pointAngle doubleValue];
 	
 	double bX = aPCD * aNumber * aAngle;
 	
-	NSString *aText = [NSString stringWithFormat:@"PCD : %f\nNumber of Point : %dea\nAngle of Point to Point : %0.3f\n", aPCD, aNumber, aAngle];
+	aText = [NSString stringWithFormat:@"PCD : %f\nNumber of Point : %dea\nAngle of Point to Point : %0.3f\n x= %0.3f", aPCD, aNumber, aAngle, bX];
 	
 	[self.pointLabel setStringValue:aText];
 }
