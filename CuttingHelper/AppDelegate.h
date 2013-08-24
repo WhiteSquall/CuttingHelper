@@ -11,6 +11,10 @@
 @class CallHelper;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+	NSString *aText;
+	int i;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *pointPCD;

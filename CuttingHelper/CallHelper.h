@@ -10,8 +10,10 @@
 
 @interface CallHelper : NSObject
 
-@property (assign) double mPCD;
-@property (assign) int mNumber;
+@property (assign) double mLength;
 @property (assign) double mAngle;
+
+-(double) TriangleX;
+-(double) TriangleY;
 
 @end

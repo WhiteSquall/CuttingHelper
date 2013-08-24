@@ -18,24 +18,33 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	
-	CallHelper *aCallhelper = [[CallHelper alloc] init];
-	[self setCallhelper:aCallhelper];
-
 }
 
 - (IBAction)startButton:(id)sender {
 	
-	NSString *aText;
+	aText = nil;
+	i = 1;
 	
-	double aPCD = [self.pointPCD doubleValue];
-	int aNumber = [self.pointNumber intValue];
-	double aAngle = [self.pointAngle doubleValue];
+	CallHelper *myCallHelper = [[CallHelper alloc] init];
+	[self setCallhelper:myCallHelper];
 	
-	double bX = aPCD * aNumber * aAngle;
+	[myCallHelper setMLength:[self.pointPCD doubleValue] / 2];
+	double rAngle = 360 / [self.pointNumber integerValue];
 	
-	aText = [NSString stringWithFormat:@"PCD : %f\nNumber of Point : %dea\nAngle of Point to Point : %0.3f\n x= %0.3f", aPCD, aNumber, aAngle, bX];
+	aText = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", [self.pointPCD doubleValue], [self.pointNumber integerValue], rAngle];
 	
+	while(i <= [self.pointNumber integerValue])
+		{
+		
+		double j = ([self.pointAngle doubleValue] + (rAngle * i)) - rAngle;
+		
+		[myCallHelper setMAngle:j];
+		aText = [aText stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", i, [myCallHelper TriangleX], [myCallHelper TriangleY]];
+		
+		i++;
+		
+		}
+
 	[self.pointLabel setStringValue:aText];
 }
 @end
