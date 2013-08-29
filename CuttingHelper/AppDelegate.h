@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class PCDHelper;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
