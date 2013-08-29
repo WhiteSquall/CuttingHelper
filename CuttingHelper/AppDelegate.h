@@ -2,27 +2,20 @@
 //  AppDelegate.h
 //  CuttingHelper
 //
-//  Created by WhiteSquall on 2013. 8. 21..
+//  Created by WhiteSquall on 2013. 8. 29..
 //  Copyright (c) 2013년 WhiteSquall. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@class CallHelper;
-
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-{
-	NSString *aText;
-	int i;
-}
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *pointPCD;
 @property (weak) IBOutlet NSTextField *pointNumber;
-@property (weak) IBOutlet NSTextField *pointAngle;
-@property (weak) IBOutlet NSTextField *pointLabel;
-@property (strong) CallHelper *callhelper;
+@property (weak) IBOutlet NSTextField *pointStartAngle;
+@property (unsafe_unretained) IBOutlet NSTextView *textData;
 
-- (IBAction)startButton:(id)sender;
+- (IBAction)pointCalculating:(NSButton *)sender;
 
 @end

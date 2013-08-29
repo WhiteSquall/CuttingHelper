@@ -2,7 +2,7 @@
 //  main.m
 //  CuttingHelper
 //
-//  Created by WhiteSquall on 2013. 8. 21..
+//  Created by WhiteSquall on 2013. 8. 29..
 //  Copyright (c) 2013년 WhiteSquall. All rights reserved.
 //
 
