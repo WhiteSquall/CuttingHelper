@@ -22,10 +22,16 @@
 	if ([sender state] == true)
 		{
 		mButton = true;
+		[_pointStartAngle setSelectable: false];
+		[_pointStartAngle setEditable: false];
+		[_pointStartAngle setBackgroundColor:[NSColor redColor]];
 		}
 	else
 		{
 		mButton = false;
+		[_pointStartAngle setSelectable: true];
+		[_pointStartAngle setEditable: true];
+		[_pointStartAngle setBackgroundColor:[NSColor whiteColor]];
 		}
 }
 
