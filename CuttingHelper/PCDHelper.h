@@ -10,11 +10,11 @@
 
 @interface PCDHelper : NSObject
 {
-	double mLength;
-	double mAngle;
+	double LengthValue;
+	double AngleValue;
 }
 
-- (void) dataUpdate: (double)insertPCD: (double)insertAngle;
+- (void) dataUpate: (double) mLength: (double) mAngle;
 - (double) AxisX;
 - (double) AxisY;
 

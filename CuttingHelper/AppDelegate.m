@@ -11,22 +11,22 @@
 
 @implementation AppDelegate
 
-@synthesize pointPCD;
-@synthesize pointNumber;
-@synthesize pointStartAngle;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Insert code here to initialize your application
+}
+
+- (IBAction)halfAngle:(NSButton *)sender
+{
 }
 
 - (IBAction)pointCalculating:(NSButton *)sender {
 	
 	NSString *tData = nil;
 	int i = 1;
-	int j = [self.pointNumber intValue];
-	double mPCD = [pointPCD doubleValue] / 2;
-	double mAngle = 360 / [pointNumber intValue];
+	int j = [_pointNumber intValue];
+	double mPCD = [_pointPCD doubleValue] / 2;
+	double mAngle = 360 / [_pointNumber intValue];
 	
 	PCDHelper *myPCDHelper = [[PCDHelper alloc] init];
 		
@@ -35,16 +35,15 @@
 	while(i <= j)
 		{
 		
-		double RealAngle = [self.pointStartAngle doubleValue] + mAngle * i - mAngle;
-		
-		[myPCDHelper dataUpdate:mPCD :RealAngle];
+		double RealAngle = [_pointStartAngle doubleValue] + mAngle * i - mAngle;
+		[myPCDHelper dataUpate:mPCD :RealAngle];
 		tData = [tData stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", i, [myPCDHelper AxisX], [myPCDHelper AxisY]];
 		
 		i++;
 		
 		}
 	
-	[self.textData setString:tData];
+	[_textData setString: tData];	
 
 }
 @end

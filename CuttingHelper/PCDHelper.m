@@ -13,22 +13,22 @@
 
 @implementation PCDHelper
 
-- (void) dataUpdate:(double)insertPCD :(double)insertAngle
+- (void) dataUpate:(double)mLength :(double)mAngle
 {
-	mLength = insertPCD;
-	mAngle = insertAngle;
+	LengthValue = mLength;
+	AngleValue = mAngle;
 }
 
 - (double) AxisX
 {
-	double x = mLength * cos(mAngle * PI / 180);
+	double x = LengthValue * cos(AngleValue * PI / 180);
 	
 	return x;
 }
 
 - (double) AxisY
 {
-	double y = mLength * sin(mAngle * PI / 180);
+	double y = LengthValue * sin(AngleValue * PI / 180);
 	
 	return y;
 }
