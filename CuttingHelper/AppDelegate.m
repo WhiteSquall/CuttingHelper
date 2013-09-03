@@ -18,32 +18,49 @@
 
 - (IBAction)halfAngle:(NSButton *)sender
 {
+	
+	if ([sender state] == true)
+		{
+		mButton = true;
+		}
+	else
+		{
+		mButton = false;
+		}
 }
 
-- (IBAction)pointCalculating:(NSButton *)sender {
+- (IBAction)pointCalculating:(NSButton *)sender
+{
 	
+		// Data setting
 	NSString *tData = nil;
 	int i = 1;
-	int j = [_pointNumber intValue];
+	
 	double mPCD = [_pointPCD doubleValue] / 2;
 	double mAngle = 360 / [_pointNumber intValue];
+	double mStartAngle = [_pointStartAngle doubleValue];
+	
+	if (mButton == true)
+		{
+		mStartAngle = mAngle / 2;
+		}
 	
 	PCDHelper *myPCDHelper = [[PCDHelper alloc] init];
 		
 	tData = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", [self.pointPCD doubleValue], [self.pointNumber intValue], mAngle];
 	
-	while(i <= j)
+	while(i <= [_pointNumber intValue])
 		{
 		
-		double RealAngle = [_pointStartAngle doubleValue] + mAngle * i - mAngle;
+		double RealAngle = mStartAngle + mAngle * i - mAngle;
 		[myPCDHelper dataUpate:mPCD :RealAngle];
 		tData = [tData stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", i, [myPCDHelper AxisX], [myPCDHelper AxisY]];
 		
 		i++;
 		
 		}
-	
-	[_textData setString: tData];	
+
+	[_textData setString: tData];
 
 }
 @end

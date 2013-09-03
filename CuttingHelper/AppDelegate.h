@@ -12,7 +12,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
-	int mButton;
+	bool mButton;
 }
 
 @property (assign) IBOutlet NSWindow *window;
