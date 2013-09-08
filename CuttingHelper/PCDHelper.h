@@ -10,11 +10,13 @@
 
 @interface PCDHelper : NSObject
 {
+	
 	double LengthValue;
 	double AngleValue;
+	
 }
 
-- (void) dataUpate: (double) mLength: (double) mAngle;
+- (NSString*) dataUpate :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber;
 - (double) AxisX;
 - (double) AxisY;
 

@@ -7,13 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
-@class PCDHelper;
+#import "PCDHelper.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
-	bool mButton;
+	bool CheckBox;
 }
+
+@property (nonatomic, strong) PCDHelper *myPCDHelper;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *pointPCD;

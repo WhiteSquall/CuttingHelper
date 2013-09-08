@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "PCDHelper.h"
 
 @implementation AppDelegate
 
@@ -19,54 +18,42 @@
 - (IBAction)halfAngle:(NSButton *)sender
 {
 	
+		//시작 각도 필드 처리하기
+	
 	if ([sender state] == true)
 		{
-		mButton = true;
+		CheckBox = true;
 		[_pointStartAngle setSelectable: false];
 		[_pointStartAngle setEditable: false];
+		[_pointStartAngle setStringValue:@""];
 		[_pointStartAngle setBackgroundColor:[NSColor redColor]];
 		}
 	else
 		{
-		mButton = false;
+		CheckBox = false;
 		[_pointStartAngle setSelectable: true];
 		[_pointStartAngle setEditable: true];
 		[_pointStartAngle setBackgroundColor:[NSColor whiteColor]];
 		}
+
 }
 
 - (IBAction)pointCalculating:(NSButton *)sender
 {
-	
-		// Data setting
-	NSString *tData = nil;
-	int i = 1;
-	
-	double mPCD = [_pointPCD doubleValue] / 2;
-	double mAngle = 360 / [_pointNumber intValue];
-	double mStartAngle = [_pointStartAngle doubleValue];
-	
-	if (mButton == true)
-		{
-		mStartAngle = mAngle / 2;
-		}
-	
-	PCDHelper *myPCDHelper = [[PCDHelper alloc] init];
-		
-	tData = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", [self.pointPCD doubleValue], [self.pointNumber intValue], mAngle];
-	
-	while(i <= [_pointNumber intValue])
+	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1)
 		{
 		
-		double RealAngle = mStartAngle + mAngle * i - mAngle;
-		[myPCDHelper dataUpate:mPCD :RealAngle];
-		tData = [tData stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", i, [myPCDHelper AxisX], [myPCDHelper AxisY]];
+		_myPCDHelper = [[PCDHelper alloc] init];
 		
-		i++;
-		
+		[_textData setString: [_myPCDHelper dataUpate :CheckBox :[_pointPCD doubleValue] :[_pointStartAngle doubleValue] :[_pointNumber intValue]]];
+			//[_pointPCD setStringValue:@""];
+			//[_pointNumber setStringValue:@""];
+			//[_pointStartAngle setStringValue:@""];
 		}
-
-	[_textData setString: tData];
-
+	else
+		{
+		[_textData setString:@" Input Data"];
+		}
+	
 }
 @end

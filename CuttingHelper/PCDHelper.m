@@ -13,10 +13,28 @@
 
 @implementation PCDHelper
 
-- (void) dataUpate:(double)mLength :(double)mAngle
+- (NSString*) dataUpate :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber
 {
-	LengthValue = mLength;
-	AngleValue = mAngle;
+	
+	NSString *OutputText = nil;
+	int LoopPCDNumber = 1;
+	double RealAngle = 360 / mNumber;
+	double RealStartAngle = (HalfAngleCheck == true ? RealAngle / 2 : mStartAngle);
+	LengthValue = mPCD / 2;
+	
+	OutputText = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", LengthValue, mNumber, RealAngle];
+	
+	while(LoopPCDNumber <= mNumber)
+		{
+		AngleValue = RealStartAngle + (RealAngle * LoopPCDNumber) - RealAngle;
+		OutputText = [OutputText stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", LoopPCDNumber, [self AxisX], [self AxisY]];
+		
+		LoopPCDNumber++;
+		
+		}
+	
+	return OutputText;
+	
 }
 
 - (double) AxisX
