@@ -46,13 +46,13 @@
 		_myPCDHelper = [[PCDHelper alloc] init];
 		
 		[_textData setString: [_myPCDHelper dataUpate :CheckBox :[_pointPCD doubleValue] :[_pointStartAngle doubleValue] :[_pointNumber intValue]]];
-			//[_pointPCD setStringValue:@""];
-			//[_pointNumber setStringValue:@""];
-			//[_pointStartAngle setStringValue:@""];
+		
 		}
 	else
 		{
+		
 		[_textData setString:@" Input Data"];
+		
 		}
 	
 }
