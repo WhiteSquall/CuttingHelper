@@ -24,5 +24,6 @@
 
 - (IBAction)halfAngle:(NSButton *)sender;
 - (IBAction)pointCalculating:(NSButton *)sender;
+- (IBAction)pointAddView:(NSButton *)sender;
 
 @end

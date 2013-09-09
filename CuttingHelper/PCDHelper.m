@@ -13,42 +13,50 @@
 
 @implementation PCDHelper
 
-- (NSString*) dataUpate :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber
+- (NSString*) updatePCD :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber
 {
-	
-	NSString *OutputText = nil;
+	NSString *OutputPCD = nil;
 	int LoopPCDNumber = 1;
-	double RealAngle = 360 / mNumber;
+	double RealAngle = 360 / (double)mNumber;
 	double RealStartAngle = (HalfAngleCheck == true ? RealAngle / 2 : mStartAngle);
-	LengthValue = mPCD / 2;
+	double LengthValue = mPCD / 2;
 	
-	OutputText = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", LengthValue, mNumber, RealAngle];
+	OutputPCD = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", mPCD, mNumber, RealAngle];
 	
-	while(LoopPCDNumber <= mNumber)
+	while (LoopPCDNumber <= mNumber)
 		{
-		AngleValue = RealStartAngle + (RealAngle * LoopPCDNumber) - RealAngle;
-		OutputText = [OutputText stringByAppendingFormat:@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", LoopPCDNumber, [self AxisX], [self AxisY]];
+		double AngleValue = RealStartAngle + (RealAngle * LoopPCDNumber) - RealAngle;
+		double AxisX = LengthValue * cos(AngleValue * PI / 180);
+		double AxisY = LengthValue * sin(AngleValue * PI / 180);
+		
+		OutputPCD = [OutputPCD stringByAppendingFormat :@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", LoopPCDNumber, AxisX, AxisY];
 		
 		LoopPCDNumber++;
-		
 		}
 	
-	return OutputText;
-	
+	return OutputPCD;
 }
 
-- (double) AxisX
-{
-	double x = LengthValue * cos(AngleValue * PI / 180);
+- (NSString*) updateDistance:(double)mPCD :(int)mNumber
+{	
+	NSString *OutputDistance = nil;
+	int loopPCDNumber = 2;
+	double RealAngle = 360 / (double)mNumber;
+	double LengthValue = mPCD / 2;
 	
-	return x;
-}
-
-- (double) AxisY
-{
-	double y = LengthValue * sin(AngleValue * PI / 180);
+	OutputDistance = [NSString stringWithFormat:@"PCD : ∅%0.3fmm\nNumber of Point : %dea\nAngle of Point to Point : %0.3fº\n\n", mPCD, mNumber, RealAngle];
 	
-	return y;
+	while (loopPCDNumber <= mNumber)
+		{
+		double AngleValue = RealAngle * (loopPCDNumber - 1) / 2;
+		double PCDDistance = (LengthValue * sin(AngleValue * PI / 180) * 2);
+		
+		OutputDistance = [OutputDistance stringByAppendingFormat :@"1 to %d : %0.3fmm\n", loopPCDNumber, PCDDistance];
+		
+		loopPCDNumber++;
+		}
+	
+	return OutputDistance;
 }
 
 @end

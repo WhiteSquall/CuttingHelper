@@ -40,19 +40,34 @@
 
 - (IBAction)pointCalculating:(NSButton *)sender
 {
+	[_textData setString:@""];
+	
 	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1)
 		{
-		
 		_myPCDHelper = [[PCDHelper alloc] init];
 		
-		[_textData setString: [_myPCDHelper dataUpate :CheckBox :[_pointPCD doubleValue] :[_pointStartAngle doubleValue] :[_pointNumber intValue]]];
-		
+		[_textData setString: [_myPCDHelper updatePCD :CheckBox :[_pointPCD doubleValue] :[_pointStartAngle doubleValue] :[_pointNumber intValue]]];
 		}
 	else
 		{
-		
 		[_textData setString:@" Input Data"];
+		}
+	
+}
+
+- (IBAction)pointAddView:(NSButton *)sender
+{
+	[_textData setString:@""];
+	
+	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1)
+		{
+		_myPCDHelper = [[PCDHelper alloc] init];
 		
+		[_textData setString: [_myPCDHelper updateDistance:[_pointPCD doubleValue] :[_pointNumber intValue]]];
+		}
+	else
+		{
+		[_textData setString:@" Input Data"];
 		}
 	
 }

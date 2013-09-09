@@ -9,15 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface PCDHelper : NSObject
-{
-	
-	double LengthValue;
-	double AngleValue;
-	
-}
 
-- (NSString*) dataUpate :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber;
-- (double) AxisX;
-- (double) AxisY;
+- (NSString*) updatePCD :(bool)HalfAngleCheck :(double)mPCD :(double)mStartAngle :(int)mNumber;
+- (NSString*) updateDistance :(double)mPCD :(int)mNumber;
 
 @end
