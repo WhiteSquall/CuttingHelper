@@ -38,7 +38,7 @@
 
 }
 
-- (IBAction)pointCalculating:(NSButton *)sender
+- (IBAction)pointCalculating:(NSButton *)sender //임의의 숫자 입력시 재입력 요구를 2번 반복할 필요가 있나?
 {
 	[_textData setString:@""];
 	
@@ -63,7 +63,7 @@
 		{
 		_myPCDHelper = [[PCDHelper alloc] init];
 		
-		[_textData setString: [_myPCDHelper updateDistance:[_pointPCD doubleValue] :[_pointNumber intValue]]];
+		[_textData setString: [_myPCDHelper updateDistance :[_pointPCD doubleValue] :[_pointNumber intValue]]];
 		}
 	else
 		{
