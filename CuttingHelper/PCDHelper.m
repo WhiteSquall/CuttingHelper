@@ -29,7 +29,7 @@
 		double AxisX = LengthValue * cos(AngleValue * PI / 180);
 		double AxisY = LengthValue * sin(AngleValue * PI / 180);
 		
-		OutputPCD = [OutputPCD stringByAppendingFormat :@"no.%d x 좌표 = %0.3f\t y 좌표 = %0.3f\n", LoopPCDNumber, AxisX, AxisY];
+		OutputPCD = [OutputPCD stringByAppendingFormat :@"no.%d X%0.3f\t Y%0.3f\n", LoopPCDNumber, AxisX, AxisY];
 		
 		LoopPCDNumber++;
 		}
