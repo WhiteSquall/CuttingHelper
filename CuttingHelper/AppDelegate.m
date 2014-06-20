@@ -38,13 +38,13 @@
 
 }
 
-- (IBAction)pointCalculating:(NSButton *)sender //임의의 숫자 입력시 재입력 요구를 2번 반복할 필요가 있나?
+- (IBAction)pointCalculating:(NSButton *)sender // 계산 버튼을 눌렀을 때 실행
 {
 	[_textData setString:@""];
 	
-	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1)
+	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1) // PCD 값이 0 보다 크고 홀 갯수가 하나 이상인지 확인
 		{
-		_myPCDHelper = [[PCDHelper alloc] init];
+		_myPCDHelper = [[PCDHelper alloc] init]; // PCDHelper 불러오기
 		
 		[_textData setString: [_myPCDHelper updatePCD :CheckBox :[_pointPCD doubleValue] :[_pointStartAngle doubleValue] :[_pointNumber intValue]]];
 		}
@@ -55,13 +55,13 @@
 	
 }
 
-- (IBAction)pointAddView:(NSButton *)sender
+- (IBAction)pointAddView:(NSButton *)sender // 측정 버튼을 눌렀을 때 실행
 {
 	[_textData setString:@""];
 	
-	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1)
+	if ([_pointPCD doubleValue] > 0 && [_pointNumber intValue] > 1) // PCD 값이 0 보다 크고 홀 갯수가 하나 이상인지 확인
 		{
-		_myPCDHelper = [[PCDHelper alloc] init];
+		_myPCDHelper = [[PCDHelper alloc] init]; // PCDHelper 불러오기
 		
 		[_textData setString: [_myPCDHelper updateDistance :[_pointPCD doubleValue] :[_pointNumber intValue]]];
 		}
