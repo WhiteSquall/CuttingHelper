@@ -10,4 +10,6 @@
 
 @interface Tri_function : NSObject
 
+- (double) updateTri :(double)mAngle :(double)mCLine :(double)mVLine :(double)mHLine;
+
 @end
