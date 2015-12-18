@@ -13,6 +13,7 @@
 		D282A2D217CF1E600059B66A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D282A2D017CF1E600059B66A /* Credits.rtf */; };
 		D282A2D517CF1E600059B66A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D282A2D417CF1E600059B66A /* AppDelegate.m */; };
 		D282A2D817CF1E600059B66A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D282A2D617CF1E600059B66A /* MainMenu.xib */; };
+		D2C13D6E1C23EE0C00D2B04C /* Tri-function.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C13D6D1C23EE0C00D2B04C /* Tri-function.m */; };
 		D2E352DB17CF25D300222C3B /* PCDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E352DA17CF25D300222C3B /* PCDHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		D282A2D317CF1E600059B66A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D282A2D417CF1E600059B66A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D282A2D717CF1E600059B66A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D2C13D6C1C23EE0C00D2B04C /* Tri-function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tri-function.h"; sourceTree = "<group>"; };
+		D2C13D6D1C23EE0C00D2B04C /* Tri-function.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tri-function.m"; sourceTree = "<group>"; };
 		D2E352D917CF25D300222C3B /* PCDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCDHelper.h; sourceTree = "<group>"; };
 		D2E352DA17CF25D300222C3B /* PCDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCDHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,8 @@
 				D2E352DA17CF25D300222C3B /* PCDHelper.m */,
 				D282A2D617CF1E600059B66A /* MainMenu.xib */,
 				D282A2C817CF1E600059B66A /* Supporting Files */,
+				D2C13D6C1C23EE0C00D2B04C /* Tri-function.h */,
+				D2C13D6D1C23EE0C00D2B04C /* Tri-function.m */,
 			);
 			path = CuttingHelper;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				D282A2CE17CF1E600059B66A /* main.m in Sources */,
 				D282A2D517CF1E600059B66A /* AppDelegate.m in Sources */,
 				D2E352DB17CF25D300222C3B /* PCDHelper.m in Sources */,
+				D2C13D6E1C23EE0C00D2B04C /* Tri-function.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
