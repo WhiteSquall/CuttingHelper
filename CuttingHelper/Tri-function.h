@@ -6,6 +6,8 @@
 //  Copyright © 2015년 WhiteSquall. All rights reserved.
 //
 
+// 삼각함수 추가 부분 Tri-function.h/Tri-function.m
+
 #import <Foundation/Foundation.h>
 
 @interface Tri_function : NSObject
